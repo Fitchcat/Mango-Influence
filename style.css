@@ -1,15 +1,18 @@
 /* CSS Reset & Variables */
 :root {
-    --primary-color: #FF9F1C;
-    /* Mango Orange */
-    --secondary-color: #2EC4B6;
-    /* Tropical Teal */
-    --bg-color: #0F1115;
-    /* Deep Dark Background */
+    --primary-color: #EFBA42;
+    /* Capstone Yellow */
+    --secondary-color: #FFFFFF;
+    /* White for contrast */
+    --accent-color: #2EC4B6;
+    /* Keeping Teal as accent if needed, or maybe remove */
+    --bg-color: #222B38;
+    /* Capstone Blue */
     --text-color: #FFFFFF;
-    --text-muted: #A0A0A0;
+    --text-muted: #B0B8C4;
     --card-bg: rgba(255, 255, 255, 0.05);
-    --card-border: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(239, 186, 66, 0.2);
+    /* Yellowish border */
     --font-main: 'Inter', sans-serif;
     --transition-speed: 0.5s;
 }
@@ -228,7 +231,7 @@ h3 {
 /* Team Grid */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
 }
@@ -423,6 +426,13 @@ h3 {
     animation: float 3s ease-in-out infinite;
 }
 
+.logo-img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -498,8 +508,8 @@ h3 {
 /* Gantt Chart */
 .gantt-chart {
     display: grid;
-    grid-template-rows: auto repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-rows: auto;
+    gap: 0.5rem;
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 12px;
@@ -636,7 +646,7 @@ h3 {
 /* Risk Matrix */
 .risk-matrix {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 1rem;
 }

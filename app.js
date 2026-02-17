@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     const progressBar = document.querySelector('.progress');
-    
+
     let currentSlide = 0;
     const totalSlides = slides.length;
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event Listeners
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
-    
+
     // Keyboard Navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight' || e.key === ' ') {
@@ -31,9 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add active class to current slide
         slides[index].classList.add('active');
-        
+
         // Update current index
         currentSlide = index;
+
+        // Update Counter
+        const currSlideEl = document.getElementById('currSlide');
+        const totalSlideEl = document.getElementById('totalSlide');
+        if (currSlideEl) currSlideEl.innerText = currentSlide + 1;
+        if (totalSlideEl) totalSlideEl.innerText = totalSlides;
 
         // Update Progress Bar
         const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
@@ -42,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Button States
         prevBtn.disabled = currentSlide === 0;
         nextBtn.disabled = currentSlide === totalSlides - 1;
-        
+
         prevBtn.style.opacity = currentSlide === 0 ? '0.3' : '1';
         nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.3' : '1';
     }
